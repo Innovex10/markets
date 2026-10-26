@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07120f">
+  <meta name="description" content="Explore forex and cryptocurrency markets with ApexNova Markets.">
+  <title>ApexNova Markets | Market Access</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="ApexNova Markets home">
+      <span class="brand-mark">A</span>
+      <span>APEXNOVA <small>MARKETS</small></span>
+    </a>
+
+    <div class="header-right">
+      <span class="market-status"><i></i> MARKET ACCESS</span>
+      <button id="signOutButton" class="button button-outline hidden" type="button">
+        Sign out
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="authScreen" class="screen auth-layout">
+      <div class="auth-copy">
+        <span class="eyebrow">YOUR MARKETS. YOUR DECISIONS.</span>
+        <h1>Discover the<br><span class="gradient-text">world's markets.</span></h1>
+        <p>
+          Explore foreign exchange and digital asset markets, select your
+          access package, and manage your account in one place.
+        </p>
+
+        <div class="feature-row">
+          <span>✓ Secure accounts</span>
+          <span>✓ M-Pesa checkout</span>
+          <span>✓ Market information</span>
+        </div>
+
+
+<div class="auth-art">
+  <img
+    src="/images/ApexNova Live Trading Desk.png"
+    alt="Financial market charts on a trading screen"
+    onerror="this.onerror=null; this.src='/images/ApexNova-Live-Trading-Desk.png';"
+  >
+
+  <div class="art-caption">
+    <span>GLOBAL MARKETS</span>
+    <strong>Information. Access. Opportunity.</strong>
+  </div>
+</div>
+
+      <div class="auth-card">
+        <div class="auth-tabs">
+          <button class="auth-tab active" type="button" data-auth-tab="login">
+            Sign in
+          </button>
+          <button class="auth-tab" type="button" data-auth-tab="register">
+            Create account
+          </button>
+        </div>
+
+        <form id="loginForm" class="auth-form">
+          <h2>Welcome back</h2>
+          <p class="muted">Sign in to continue to your account.</p>
+
+          <label for="loginEmail">Email address</label>
+          <input id="loginEmail" type="email" autocomplete="email"
+            placeholder="you@example.com" required maxlength="254">
+
+          <label for="loginPassword">Password</label>
+          <input id="loginPassword" type="password"
+            autocomplete="current-password" required>
+
+          <button class="button button-primary full-width" type="submit">
+            Sign in <span>→</span>
+          </button>
+        </form>
+
+        <form id="registerForm" class="auth-form hidden">
+          <h2>Create your account</h2>
+          <p class="muted">Enter your details to get started.</p>
+
+          <label for="registerName">Full name</label>
+          <input id="registerName" type="text" autocomplete="name"
+            placeholder="Your full name" required minlength="2" maxlength="100">
+
+          <label for="registerEmail">Email address</label>
+          <input id="registerEmail" type="email" autocomplete="email"
+            placeholder="you@example.com" required maxlength="254">
+
+          <label for="registerPhone">M-Pesa phone number</label>
+          <input id="registerPhone" type="tel" autocomplete="tel"
+            placeholder="0712345678" required>
+
+          <label for="registerPassword">Create password</label>
+          <input id="registerPassword" type="password"
+            autocomplete="new-password" minlength="10" maxlength="128" required>
+          <small class="field-hint">Use at least 10 characters.</small>
+
+          <button class="button button-primary full-width" type="submit">
+            Create account <span>→</span>
+          </button>
+        </form>
+
+        <p id="authMessage" class="message" role="status" aria-live="polite"></p>
+        <p class="legal-note">
+          By continuing, you agree to use the service lawfully and to review
+          the applicable terms and risk disclosures.
+        </p>
+      </div>
+    </section>
+
+    <section id="welcomeScreen" class="screen hidden">
+      <div class="welcome-banner">
+        <span class="eyebrow">WELCOME TO APEX NOVA</span>
+        <h1>Choose your <span class="gradient-text">market journey.</span></h1>
+        <p>
+          Explore the markets below, then choose the access package that
+          suits your interests.
+        </p>
+      </div>
+
+      <div class="market-intro-grid">
+        <article class="market-intro-card">
+          <img
+            src="/images/Global Forex Trading Workspace.png"
+            alt="Forex charts displayed on a financial trading screen"
+          >
+          <div class="market-card-content">
+            <span class="eyebrow">01 / CURRENCY MARKETS</span>
+            <h2>Foreign Exchange</h2>
+            <p>
+              Explore currency pairs, exchange-rate information, and
+              forex market movements.
+            </p>
+            <button class="button button-primary next-button"
+              data-next="forexScreen" type="button">
+              Explore forex <span>→</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="market-intro-card">
+          <img
+            src="/images/crypto-markets.png"
+            alt="Digital cryptocurrency coin representing crypto markets"
+          >
+          <div class="market-card-content">
+            <span class="eyebrow">02 / DIGITAL ASSETS</span>
+            <h2>Cryptocurrency</h2>
+            <p>
+              Explore digital assets, crypto market information,
+              and available access packages.
+            </p>
+            <button class="button button-primary next-button"
+              data-next="cryptoScreen" type="button">
+              Explore crypto <span>→</span>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <div class="center-action">
+        <button id="chooseBothButton" class="button button-outline" type="button">
+          Explore both markets <span>→</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="forexScreen" class="screen hidden">
+      <button class="back-button" data-back="welcomeScreen" type="button">
+        ← Back to markets
+      </button>
+
+      <div class="section-hero">
+        <div>
+          <span class="eyebrow">FOREIGN EXCHANGE</span>
+          <h1>Explore <span class="gradient-text">forex.</span></h1>
+          <p>
+            Access the currency-market information available in your
+            selected package.
+          </p>
+        </div>
+        <img
+          src="/images/Cinematic Neon Financial Trading Dashboard.png"
+          alt="Financial market chart and price movements"
+        >
+      </div>
+
+      <div class="symbol-grid">
+        <div class="symbol-card"><span>EUR / USD</span><strong>Euro / US Dollar</strong></div>
+        <div class="symbol-card"><span>GBP / USD</span><strong>British Pound / US Dollar</strong></div>
+        <div class="symbol-card"><span>USD / JPY</span><strong>US Dollar / Japanese Yen</strong></div>
+        <div class="symbol-card"><span>USD / KES</span><strong>US Dollar / Kenyan Shilling</strong></div>
+      </div>
+
+      <div class="section-footer">
+        <div>
+          <h2>Select forex access</h2>
+          <p class="muted">Choose a package to continue.</p>
+        </div>
+        <button class="button button-primary next-button"
+          data-next="packagesScreen" data-category="forex" type="button">
+          View packages <span>→</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="cryptoScreen" class="screen hidden">
+      <button class="back-button" data-back="welcomeScreen" type="button">
+        ← Back to markets
+      </button>
+
+      <div class="section-hero">
+        <div>
+          <span class="eyebrow">DIGITAL ASSET MARKETS</span>
+          <h1>Explore <span class="gradient-text">crypto.</span></h1>
+          <p>
+            Explore cryptocurrency market information and select
+            the package that matches your interests.
+          </p>
+        </div>
+        <img
+          src="/images/crypto-markeys.png"
+          alt="Cryptocurrency coin"
+        >
+      </div>
+
+      <div class="symbol-grid">
+        <div class="symbol-card"><span>BTC / USD</span><strong>Bitcoin</strong></div>
+        <div class="symbol-card"><span>ETH / USD</span><strong>Ethereum</strong></div>
+        <div class="symbol-card"><span>SOL / USD</span><strong>Solana</strong></div>
+        <div class="symbol-card"><span>XRP / USD</span><strong>XRP</strong></div>
+      </div>
+
+      <div class="section-footer">
+        <div>
+          <h2>Select crypto access</h2>
+          <p class="muted">Choose a package to continue.</p>
+        </div>
+        <button class="button button-primary next-button"
+          data-next="packagesScreen" data-category="crypto" type="button">
+          View packages <span>→</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="packagesScreen" class="screen hidden">
+      <button class="back-button" id="packageBackButton" type="button">
+        ← Back
+      </button>
+
+      <div class="welcome-banner">
+        <span class="eyebrow">YOUR ACCESS OPTIONS</span>
+        <h1>Choose your <span class="gradient-text">package.</span></h1>
+        <p>
+          Prices are shown in Kenyan shillings. Review what is included
+          before paying.
+        </p>
+      </div>
+
+      <div id="packageGrid" class="package-grid"></div>
+      <p id="packageMessage" class="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="checkoutScreen" class="screen hidden">
+      <button class="back-button" data-back="packagesScreen" type="button">
+        ← Back to packages
+      </button>
+
+      <div class="checkout-layout">
+        <div class="checkout-info">
+          <span class="eyebrow">SECURE CHECKOUT</span>
+          <h1>Complete your <span class="gradient-text">payment.</span></h1>
+          <p>
+            Enter the Kenyan mobile number that should receive the
+            M-Pesa payment prompt.
+          </p>
+
+          <div class="payment-method">
+            <div class="mpesa-logo">M</div>
+            <div>
+              <strong>M-Pesa</strong>
+              <span>Safaricom mobile payment</span>
+            </div>
+          </div>
+
+          <form id="checkoutForm">
+            <label for="checkoutPhone">M-Pesa phone number</label>
+            <input id="checkoutPhone" type="tel"
+              placeholder="0712345678" required>
+            <button class="button button-primary full-width" type="submit">
+              Request M-Pesa prompt <span>→</span>
+            </button>
+          </form>
+
+          <p id="checkoutMessage" class="message" role="status" aria-live="polite"></p>
+          <p class="legal-note">
+            Access is granted only after the server records a successful
+            payment callback matching the requested transaction and amount.
+          </p>
+        </div>
+
+        <aside class="order-card">
+          <span class="eyebrow">ORDER SUMMARY</span>
+          <h2 id="orderName">Selected package</h2>
+          <p id="orderDescription" class="muted"></p>
+          <div class="order-line">
+            <span>Amount due</span>
+            <strong id="orderPrice">KSh 0</strong>
+          </div>
+          <div class="order-line">
+            <span>Payment method</span>
+            <strong>M-Pesa</strong>
+          </div>
+          <div class="order-total">
+            <span>Total</span>
+            <strong id="orderTotal">KSh 0</strong>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="dashboardScreen" class="screen hidden">
+      <div class="dashboard-heading">
+        <div>
+          <span class="eyebrow">YOUR ACCOUNT</span>
+          <h1>Welcome, <span id="customerName" class="gradient-text">Customer</span></h1>
+          <p class="muted">Manage your packages and access available market information.</p>
+        </div>
+        <button id="browseMarketsButton" class="button button-primary" type="button">
+          Browse markets <span>→</span>
+        </button>
+      </div>
+
+      <div class="dashboard-stats">
+        <article class="stat-card">
+          <span>ACTIVE PACKAGES</span>
+          <strong id="activePackages">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>ACCOUNT STATUS</span>
+          <strong id="accountStatus">Registered</strong>
+        </article>
+        <article class="stat-card">
+          <span>PAYMENT METHOD</span>
+          <strong>M-Pesa</strong>
+        </article>
+      </div>
+
+      <div class="dashboard-columns">
+        <section class="panel">
+          <h2>Your market access</h2>
+          <div id="entitlementList" class="entitlement-list"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Market information</h2>
+          <p class="muted">
+            Choose an accessible market to request a current quote from
+            the configured data provider.
+          </p>
+
+          <label for="marketCategory">Market</label>
+          <select id="marketCategory">
+            <option value="forex">Forex</option>
+            <option value="crypto">Cryptocurrency</option>
+          </select>
+
+          <label for="marketSymbol">Instrument</label>
+          <select id="marketSymbol"></select>
+
+          <button id="loadQuoteButton" class="button button-primary full-width" type="button">
+            Load market quote
+          </button>
+
+          <div id="quoteResult" class="quote-result" aria-live="polite">
+            <span>Market quote</span>
+            <strong>—</strong>
+            <small>Request a quote to view provider data.</small>
+          </div>
+        </section>
+      </div>
+
+      <div class="risk-note">
+        <strong>Market risk disclosure</strong>
+        <p>
+          Forex and cryptocurrency markets can be volatile. Prices may be
+          delayed or subject to provider limitations. Market-data access is
+          not the same as brokerage access, and purchasing a package does
+          not guarantee returns or execute trades. Never invest money you
+          cannot afford to lose.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="/">
+      <span class="brand-mark">A</span>
+      <span>APEXNOVA <small>MARKETS</small></span>
+    </a>
+    <p>Market information and access services.</p>
+    <p>Trading involves risk. No profits are guaranteed.</p>
+  </footer>
+</body>
+</html>
